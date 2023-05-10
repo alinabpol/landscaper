@@ -72,6 +72,7 @@ def purchase_lawnmover():
     if account_balance[0] == 25:
         print(f'Congrats, you\'ve earned ${account_balance[0]}, and now you can buy a {tools[2]["type"]}! Press "Ok" to proceed with the purchase.')
         account_balance[0] -= 25
+        money_earned -=25
         print(f'You\'ve succesfully purchased a {tools[2]["type"]}. Now you have ${account_balance[0]} on your account')
         my_tools = tools[2]["type"]
     elif account_balance[0] < 25:
@@ -93,3 +94,18 @@ def use_lanmower():
                 print('You can buy more tools, check it out!')
           
 use_lanmower()
+
+def purchase_modern_lawnmover():
+    global money_earned, account_balance, my_tools
+    if account_balance[0] == 250:
+        print(f'Congrats, you\'ve earned ${account_balance[0]}, and now you can buy a {tools[3]["type"]}! Press "Ok" to proceed with the purchase.')
+        account_balance[0] -= 250
+        money_earned -= 250
+        print(f'You\'ve succesfully purchased a {tools[3]["type"]}. Now you have ${account_balance[0]} on your account')
+        my_tools = tools[3]["type"]
+    elif account_balance[0] < 250:
+        print(f'You have ${account_balance}. Keep working!')
+    elif my_tools == tools[3]["type"]:
+        print(f'You can purchase {tools[3]["type"]} only once!')
+
+purchase_modern_lawnmover()
