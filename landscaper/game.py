@@ -109,3 +109,16 @@ def purchase_modern_lawnmover():
         print(f'You can purchase {tools[3]["type"]} only once!')
 
 purchase_modern_lawnmover()
+
+def use_modern_lanmower():
+        global money_earned, account_balance, my_tools
+        print(f"Start cutting lawns with {tools[3]['type']} and earn ${tools[3]['profit']}!")
+        for b in range(5):
+            if account_balance[0] < 500 and my_tools == tools[3]["type"]:
+                money_earned += 100
+                account_balance.insert(0, money_earned)
+                print(f"You've earned ${account_balance[0]} cutting lawns with {tools[3]['type']}!")
+            else:
+                print('You can buy more tools, check it out!')
+          
+use_modern_lanmower()
