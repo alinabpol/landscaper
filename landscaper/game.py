@@ -137,3 +137,16 @@ def hire_students():
         print(f'You can purchase {tools[4]["type"]} only once!')
 
 hire_students()
+
+def work_with_students():
+        global money_earned, account_balance, my_tools
+        print(f"Start cutting lawns with {tools[4]['type']} and earn ${tools[4]['profit']}!")
+        for b in range(5):
+            if account_balance[0] < 1000 and my_tools == tools[4]["type"]:
+                money_earned += 250
+                account_balance.insert(0, money_earned)
+                print(f"You've earned ${account_balance[0]} cutting lawns with {tools[4]['type']}!")
+            else:
+                print(f'Congrats, you\'ve earned ${account_balance[0]} and you won this game!! Whoo!')
+          
+work_with_students()
