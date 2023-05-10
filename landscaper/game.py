@@ -64,6 +64,32 @@ def use_scissors():
                 print(f'You\'ve earned ${account_balance[0]} cutting lawns with scissors!')
             else:
                 print('You can buy more tools, check it out!')
-
-            
+          
 use_scissors()
+
+def purchase_lawnmover():
+    global money_earned, account_balance, my_tools
+    if account_balance[0] == 25:
+        print(f'Congrats, you\'ve earned ${account_balance[0]}, and now you can buy a {tools[2]["type"]}! Press "Ok" to proceed with the purchase.')
+        account_balance[0] -= 25
+        print(f'You\'ve succesfully purchased a {tools[2]["type"]}. Now you have ${account_balance[0]} on your account')
+        my_tools = tools[2]["type"]
+    elif account_balance[0] < 25:
+        print(f'You have ${account_balance}. Keep working!')
+    elif my_tools == tools[2]["type"]:
+        print(f'You can purchase {tools[2]["type"]} only once!')
+
+purchase_lawnmover()
+
+def use_lanmower():
+        global money_earned, account_balance, my_tools
+        print(f"Start cutting lawns with {tools[2]['type']} and earn ${tools[2]['profit']}!")
+        for b in range(5):
+            if account_balance[0] < 250 and my_tools == tools[2]["type"]:
+                money_earned += 50
+                account_balance.insert(0, money_earned)
+                print(f"You've earned ${account_balance[0]} cutting lawns with {tools[2]['type']}!")
+            else:
+                print('You can buy more tools, check it out!')
+          
+use_lanmower()
